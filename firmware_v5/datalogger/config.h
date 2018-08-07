@@ -17,7 +17,7 @@
 #ifndef ENABLE_DATA_OUT
 
 // enable(1)/disable(0) data streaming
-#define ENABLE_DATA_OUT 1
+#define ENABLE_DATA_OUT 0
 
 // file size limit
 #define MAX_DATA_FILE_SIZE 1024000 /* KB */
@@ -27,16 +27,16 @@
 **************************************/
 
 // enable(1)/disable(0) OBD-II reading
-#define USE_OBD 0
+#define USE_OBD 1
 
 // enable(1)/disable(0) GPS module
-#define USE_GPS 0
+#define USE_GPS 1
 
 #endif
 
 // enable(1)/disable(0) quaternion calculation to get orientation
 #ifndef ENABLE_ORIENTATION
-#define ENABLE_ORIENTATION 0
+#define ENABLE_ORIENTATION 1
 #endif
 
 #if ENABLE_ORIENTATION
