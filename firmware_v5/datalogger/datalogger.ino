@@ -227,7 +227,7 @@ public:
   #endif
         clearState(STATE_OBD_READY | STATE_GPS_READY);
         Serial.println("Standby");
-        ble.println("Standby");
+        //ble.println("Standby");
   #if MEMS_MODE
         if (checkState(STATE_MEMS_READY)) {
           calibrateMEMS();
@@ -254,7 +254,7 @@ public:
         while (!obd.init()) Serial.print('.');
   #endif
         Serial.println("Wakeup");
-        ble.println("Wakeup");
+        //ble.println("Wakeup");
     }
     bool checkState(byte flags) { return (m_state & flags) == flags; }
     void setState(byte flags) { m_state |= flags; }
@@ -298,17 +298,17 @@ void showStats()
     Serial.println();
 #endif
     // output via BLE
-    ble.print(timestr);
-    ble.print(' ');
-    ble.print(logger.dataCount);
-    ble.print(' ');
-    ble.print(sps, 1);
-    if (fileSize > 0) {
-      ble.print(' ');
-      ble.print(fileSize >> 10);
-      ble.print('K');
-    }
-    ble.println();
+    //ble.print(timestr);
+    //ble.print(' ');
+    //ble.print(logger.dataCount);
+    //ble.print(' ');
+    //ble.print(sps, 1);
+    //if (fileSize > 0) {
+    //  ble.print(' ');
+    //  ble.print(fileSize >> 10);
+    //  ble.print('K');
+    //}
+    //ble.println();
 }
 
 void setup()
@@ -324,7 +324,7 @@ void setup()
     Serial.println("MB Flash");
 
     sys.begin();
-    ble.begin("Freematics ONE+");
+    //ble.begin("Freematics ONE+");
 
     // init LED pin
     pinMode(PIN_LED, OUTPUT);
@@ -401,8 +401,8 @@ void loop()
         pidErrors++;
         Serial.print("PID errors: ");
         Serial.println(pidErrors);
-        ble.print("PID errors: ");
-        ble.println(pidErrors);
+        //ble.print("PID errors: ");
+        //ble.println(pidErrors);
         if (obd.errors >= 3) {
           obd.reset();
           logger.reconnect();

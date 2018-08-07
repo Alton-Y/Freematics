@@ -17,7 +17,7 @@
 #ifndef ENABLE_DATA_OUT
 
 // enable(1)/disable(0) data streaming
-#define ENABLE_DATA_OUT 0
+#define ENABLE_DATA_OUT 1
 
 // file size limit
 #define MAX_DATA_FILE_SIZE 1024000 /* KB */
@@ -27,10 +27,10 @@
 **************************************/
 
 // enable(1)/disable(0) OBD-II reading
-#define USE_OBD 1
+#define USE_OBD 0
 
 // enable(1)/disable(0) GPS module
-#define USE_GPS 1
+#define USE_GPS 0
 
 #endif
 
