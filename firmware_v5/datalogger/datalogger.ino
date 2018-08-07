@@ -390,7 +390,7 @@ void loop()
       return;
     }
 #if USE_OBD
-    byte pids[]= {PID_RPM, PID_SPEED, PID_THROTTLE, PID_ENGINE_LOAD};
+    byte pids[]= {PID_RPM, PID_SPEED, PID_THROTTLE, PID_ENGINE_LOAD, PID_FUEL_LEVEL, PID_ENGINE_FUEL_RATE, PID_TIMING_ADVANCE, PID_ETHANOL_FUEL};
     logger.store.setTimestamp(millis());
     for (byte i = 0; i < sizeof(pids) / sizeof(pids[0]); i++) {
       int value;
